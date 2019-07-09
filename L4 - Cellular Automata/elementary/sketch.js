@@ -10,8 +10,4 @@ function setup() {
 function draw() {
     ca.draw(w);
     ca.generate();
-
-    if(ca.generation > 50) {
-        noLoop();
-    }
 }
