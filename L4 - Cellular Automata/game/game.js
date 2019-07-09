@@ -1,65 +1,88 @@
 class GameOfLife {
-    constructor(columns, rows) {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
         this.generation = 0;
 
-        this.columns = columns;
-        this.rows = rows;
+        // Create a 2d Array of size (w, h) and initialize it with random states
+        this.cells = this.initGrid(w, h, 0.5);
+    }
 
-        this.cells = new Array(this.columns);
-        for (let i = 0; i < this.rows; i++) {
-            this.cells[i] = new Array(rows);
-        }
-
-        // Initialize cells with all zeros and one in the middle
-        for (let i = 0; i < columns; i++) {
-            for (let j = 0; j < rows; j++) {
-                this.cells[i][j] = int(random(2));
+    initGrid(w, h, p) {
+        let grid = new Array(w).fill(0);
+        for(let i = 0; i < w; i++) {
+            grid[i] = new Array(h).fill(0);
+            for(let j = 0; j < h; j++) {
+                grid[i][j] = random() <= p ? 0 : 1;
             }
         }
-     }
 
-     generate() {
-         let nextgen = new Array(this.columns);
-         for (let i = 0; i < this.rows; i++) {
-             nextgen[i] = new Array(this.rows);
-         }
+        return grid;
+    }
 
-         for (let x = 1; x < this.columns - 1; x++) {
-             for (let y = 1; y < this.rows - 1; y++) {
+    evolve() {
+        let nextgen = this.initGrid(this.w, this.h, 1);
 
-                 let neighbors = 0;
-                 for (let i = -1; i <= 1; i++) {
-                     for (let j = -1; j <= 1; j++) {
-                         neighbors += this.cells[x+i][y+j];
-                     }
-                 }
+        // Evolve each individual cell
+        for(let i = 1; i < this.w - 1; i++) {
+            for(let j = 1; j < this.h - 1; j++) {
+                nextgen[i][j] = this.applyRules(i, j);
+            }
+        }
 
-                 neighbors -= this.cells[x][y];
+        this.cells = nextgen;
+        this.generation++;
+    }
 
-                 if      ((this.cells[x][y] == 1) && (neighbors <  2)) nextgen[x][y] = 0;
-                 else if ((this.cells[x][y] == 1) && (neighbors >  3)) nextgen[x][y] = 0;
-                 else if ((this.cells[x][y] == 0) && (neighbors == 3)) nextgen[x][y] = 1;
-                 else nextgen[x][y] = this.cells[x][y];
-             }
-         }
+    getAliveNeighbors(x, y) {
+        let aliveNeighbors = 0;
 
-         this.cells = nextgen;
-         this.generation++;
-     }
+        for(let i = -1; i <= 1; i++) {
+            for(let j = -1; j <= 1; j++) {
+                if(i == 0 && j == 0) {
+                    continue;
+                }
 
-     draw(w) {
-         for (let i = 0; i < this.columns;i++) {
-             for (let j = 0; j < this.rows;j++) {
-                 if ((this.cells[i][j] == 1)) {
-                     fill(0);
-                 }
-                 else {
-                     fill(255);
-                 }
+                if(this.cells[x+i][y+j] == 1) {
+                    aliveNeighbors++;
+                }
+            }
+        }
 
-                 stroke(0);
-                 rect(i*w, j*w, w, w);
+        return aliveNeighbors;
+    }
+
+    applyRules(x, y) {
+        let aliveNeighbors = this.getAliveNeighbors(x, y);
+
+        // If cell is alive
+        if(this.cells[x][y] == 1) {
+            // It will die due to overpopulation or loneliness
+            if(aliveNeighbors >= 4 || aliveNeighbors <= 1) {
+                return 0;
+            }
+        }
+        else if (aliveNeighbors == 3) {
+            return 1;
+        }
+
+        return this.cells[x][y];
+    }
+
+    draw(cellSize) {
+        for(let i = 0; i < this.w; i++) {
+            for(let j = 0; j < this.h; j++) {
+                if(this.cells[i][j] == 1) {
+                    fill(0);
+                }
+                else {
+                    fill(255);
+                }
+
+                rect(i*cellSize, j*cellSize, cellSize, cellSize);
             }
         }
     }
+
+
 }

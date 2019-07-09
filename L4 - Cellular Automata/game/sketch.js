@@ -1,12 +1,16 @@
+let cellW = 10;
 
 function setup() {
-    createCanvas(600, 600);
+  createCanvas(800,500);
+  strokeWeight(1);
 
-    w = 10;
-    game = new GameOfLife(width/w, height/w);
+  let gameWidth = width/cellW;
+  let gameHeight = height/cellW;
+
+  game = new GameOfLife(gameWidth, gameHeight);
 }
 
 function draw() {
-    game.draw(w);
-    game.generate();
-}
+    game.draw(cellW);
+    game.evolve();
+ }
