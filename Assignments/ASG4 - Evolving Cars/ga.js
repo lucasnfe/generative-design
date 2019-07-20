@@ -32,15 +32,13 @@ class GeneticAlgorithm {
     }
 
     evolve() {
-        for(let i = 0; i < n; i++)  {
-            this.evaluate();
+        this.evaluate();
 
-            let matingPool = this.select();
-            let newPopulation = this.reproduce(matingPool);
-            this.mutate(newPopulation);
+        let matingPool = this.select();
+        let newPopulation = this.reproduce(matingPool);
+        this.mutate(newPopulation);
 
-            this.population = newPopulation;
-        }
+        this.population = newPopulation;
 
         this.evaluate();
         return this.best();
@@ -70,7 +68,16 @@ class GeneticAlgorithm {
     }
 
     reproduce(matingPool) {
+        let newPopulation = new Array(this.popSize);
 
+        for(let i = 0; i < this.popSize; i++) {
+            let a = int(random(this.popSize));
+            let b = int(random(this.popSize));
+
+            newPopulation[i] = this.crossover(matingPool[a], matingPool[b]);
+        }
+
+        return newPopulation;
     }
 
     crossover(parentA, parentB) {
