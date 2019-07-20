@@ -3,10 +3,10 @@ class Car {
     static angAmount = 8;
     static wheAmount = 2;
 
-    static angRange  = [30, 360];
-    static magRange  = [50, 100];
+    static angRange  = [0, 360];
+    static magRange  = [0, 100];
     static radRange  = [10, 60];
-    static acceler   = 30;
+    static acceler   = 50;
 
     constructor(x, y, name, carFeats) {
         this.name = name;
