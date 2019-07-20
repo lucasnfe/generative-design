@@ -1,5 +1,5 @@
 
-function dfs(init, end, adj, goalTest) {
+function dfs(init, adj, goalTest) {
     let stack = [init];
     let visited = {init: null};
 
@@ -8,8 +8,8 @@ function dfs(init, end, adj, goalTest) {
         let cnode = stack.pop();
 
         // Check if cnode is the goal
-        if (goalTest(cnode, end)) {
-            return pathToGoal(init, end, visited);
+        if (goalTest(cnode)) {
+            return pathToGoal(init, cnode, visited);
         }
 
         // Iterate on the list of adjacent nodes
@@ -24,7 +24,7 @@ function dfs(init, end, adj, goalTest) {
     return null;
 }
 
-function bfs(init, end, adj, goalTest) {
+function bfs(init, adj, goalTest) {
     let queue = [init];
     let visited = {init: null};
 
@@ -33,8 +33,8 @@ function bfs(init, end, adj, goalTest) {
         let cnode = queue.shift();
 
         // Check if cnode is the goal
-        if (goalTest(cnode, end)) {
-            return pathToGoal(init, end, visited);
+        if (goalTest(cnode)) {
+            return pathToGoal(init, cnode, visited);
         }
 
         // Iterate on the list of adjacent nodes

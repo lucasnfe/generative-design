@@ -31,7 +31,7 @@ function draw() {
     }
 
     if(frameCount % 20 == 0) {
-        path = bfs(init, end, adj, goalTest);
+        path = dfs(init, adj, goalTest);
     }
 
     // draw path
@@ -79,8 +79,8 @@ function adj(state) {
 }
 
 // A state here is a vector
-function goalTest(state1, state2) {
-    return (state1.x == state2.x) && (state1.y == state2.y);
+function goalTest(state) {
+    return (state.x == end.x) && (state.y == end.y);
 }
 
 function mousePressed() {
