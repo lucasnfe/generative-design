@@ -152,14 +152,22 @@ class Car {
         rotate(a);
 
         // Draw body
-        beginShape(TRIANGLE_STRIP);
-            fill(this.bodyColor);
-            for(let v of this.vs) {
+        fill(this.bodyColor);
 
-                vertex(v.x,v.y);
-                vertex(0,0);
-            }
-        endShape();
+        // beginShape();
+        for(let i = 0; i < this.vs.length; i++) {
+            // vertex(0, 0);
+            // vertex(this.vs[i].x, this.vs[i].y);
+            // vertex(this.vs[(i + 1) % this.vs.length].x, this.vs[(i + 1) % this.vs.length].y);
+            let ax = this.vs[i].x;
+            let ay = this.vs[i].y;
+
+            let bx = this.vs[(i + 1) % this.vs.length].x;
+            let by = this.vs[(i + 1) % this.vs.length].y;
+
+            triangle(0, 0, ax, ay, bx, by);
+        }
+        // endShape();
 
         // Draw wheels
         fill(this.wheelsColor);
