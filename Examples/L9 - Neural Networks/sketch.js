@@ -5,7 +5,7 @@ let ys = [];
 let maxX = 10;
 
 function setup() {
-    createCanvas(500,500);
+    createCanvas(500, 500);
 
     // Training set
     let train = generateData(7, 3, 900);
@@ -14,20 +14,20 @@ function setup() {
     ys = train[1];
 
     nn = new Perceptron(xs[0].length);
-    nn.train(xs, ys, 0.01, 1000);
+    // nn.train(xs, ys, 0.01, 100);
 
     // test set
-    let test = generateData(7, 3, 100);
-
-    nxs = test[0];
-    nys = test[1];
-
-    let accuracy = nn.evaluate(nxs, nys);
-    console.log("accuracy", accuracy);
+    // let test = generateData(7, 3, 100);
+    //
+    // nxs = test[0];
+    // nys = test[1];
+    //
+    // let accuracy = nn.evaluate(nxs, nys);
+    // console.log("accuracy", accuracy);
 }
 
 function draw() {
-    background(230);
+    background(255);
 
     // Draw the dataset
     strokeWeight(5);
@@ -43,7 +43,7 @@ function draw() {
               (xs[i][1]/maxX) * height);
     }
 
-    // nn.epoch(xs, ys, 0.0001);
+    nn.epoch(xs, ys, 0.00001);
 
     // Draw the weights vector as a line
     stroke("black");
@@ -54,7 +54,8 @@ function draw() {
     let x2 = maxX;
     let y2 = (-nn.ws[1]*x2 - nn.ws[0])/nn.ws[2];
 
-    line((x1/maxX)*width, (y1/maxX)*height, (x2/maxX)*width, (y2/maxX)*height);
+    line((x1/maxX)*width, (y1/maxX)*height,
+         (x2/maxX)*width, (y2/maxX)*height);
 }
 
 // Generates data for college adimission problem
@@ -63,8 +64,8 @@ function generateData(mean, sd, n) {
     let ys = [];
 
     for(let i = 0; i < n; i ++) {
-        let grade1 = constrain(randomGaussian(mean, sd), 0, 10);
-        let grade2 = constrain(randomGaussian(grade1, sd), 0, 10);
+        let grade1 = constrain(randomGaussian(mean, sd), 0, maxX);
+        let grade2 = constrain(randomGaussian(grade1, sd), 0, maxX);
 
         let accepted = 0;
 
