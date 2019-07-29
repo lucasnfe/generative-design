@@ -33,10 +33,10 @@ function draw() {
     strokeWeight(5);
     for(let i = 0; i < xs.length; i++) {
         if(ys[i] == 0) {
-            stroke("red");
+            stroke(255, 0, 0, 150);
         }
         else if(ys[i] == 1) {
-            stroke("green");
+            stroke(0, 200, 0, 150);
         }
 
         point((xs[i][0]/maxX) * width,
@@ -45,17 +45,8 @@ function draw() {
 
     nn.epoch(xs, ys, 0.00001);
 
-    // Draw the weights vector as a line
-    stroke("black");
-    strokeWeight(1);
-
-    let x1 = 0;
-    let y1 = (-nn.ws[1]*x1 - nn.ws[0])/nn.ws[2];
-    let x2 = maxX;
-    let y2 = (-nn.ws[1]*x2 - nn.ws[0])/nn.ws[2];
-
-    line((x1/maxX)*width, (y1/maxX)*height,
-         (x2/maxX)*width, (y2/maxX)*height);
+    // Draw the weight vector
+    nn.draw();
 }
 
 // Generates data for college adimission problem
