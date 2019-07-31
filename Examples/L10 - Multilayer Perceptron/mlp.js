@@ -117,14 +117,14 @@ class MLP {
             let row = this.ixh.getRow(i);
 
             this.drawBoundary(row);
-            // this.drawWeights(row);
+            this.drawWeights(row, "Wh" + i);
         }
 
         for(let i = 0; i < this.hxo.rows; i++) {
             let row = this.hxo.getRow(i);
 
             this.drawBoundary(row);
-            // this.drawWeights(row);
+            this.drawWeights(row, "Wo" + i);
         }
     }
 
@@ -138,7 +138,7 @@ class MLP {
              (x2/maxX)*width, (y2/maxX)*height);
     }
 
-    drawWeights(row) {
+    drawWeights(row, wname) {
         // Create a 2D vector from the weights disconsireding the bias w0
         let w = createVector(row[1], row[2])
         w.normalize();
@@ -147,7 +147,7 @@ class MLP {
         push();
 
         // Find a point near the end of the linear boundary
-        let x3 = maxX/1.25;
+        let x3 = maxX/1.5;
         let y3 = (-row[1]*x3 - row[0])/row[2];
 
         translate((x3/maxX)*width, (y3/maxX)*height);
@@ -162,7 +162,7 @@ class MLP {
         triangle(0, arrowSize/2, 0, -arrowSize/2, arrowSize, 0);
 
         // Draw the label of the vector
-        text("w", -(w.mag() - arrowSize)/2, -2);
+        text(wname, -(w.mag() - arrowSize)/2, -5);
 
         pop();
     }
