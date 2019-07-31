@@ -1,6 +1,9 @@
 
-let xs = [];
-let ys = [];
+let trainXs = [];
+let trainYs = [];
+
+let testXs = [];
+let testYs = [];
 
 let maxX = 10;
 
@@ -10,20 +13,16 @@ function setup() {
     // Training set
     let train = generateData(7, 3, 900);
 
-    xs = train[0];
-    ys = train[1];
+    trainXs = train[0];
+    trainYs = train[1];
 
-    nn = new Perceptron(xs[0].length);
-    // nn.train(xs, ys, 0.01, 100);
+    nn = new Perceptron(trainXs[0].length);
 
     // test set
-    // let test = generateData(7, 3, 100);
-    //
-    // nxs = test[0];
-    // nys = test[1];
-    //
-    // let accuracy = nn.evaluate(nxs, nys);
-    // console.log("accuracy", accuracy);
+    let test = generateData(7, 3, 100);
+
+    testXs = test[0];
+    testYs = test[1];
 }
 
 function draw() {
@@ -31,19 +30,22 @@ function draw() {
 
     // Draw the dataset
     strokeWeight(5);
-    for(let i = 0; i < xs.length; i++) {
-        if(ys[i] == 0) {
+    for(let i = 0; i < trainXs.length; i++) {
+        if(trainYs[i] == 0) {
             stroke(255, 0, 0, 150);
         }
-        else if(ys[i] == 1) {
+        else if(trainYs[i] == 1) {
             stroke(0, 200, 0, 150);
         }
 
-        point((xs[i][0]/maxX) * width,
-              (xs[i][1]/maxX) * height);
+        point((trainXs[i][0]/maxX) * width,
+              (trainXs[i][1]/maxX) * height);
     }
 
-    nn.epoch(xs, ys, 0.00001);
+    nn.epoch(trainXs, trainYs, 0.00001);
+
+    let accuracy = nn.evaluate(testXs, testYs);
+    console.log("accuracy", accuracy);
 
     // Draw the weight vector
     nn.draw();
@@ -55,8 +57,8 @@ function generateData(mean, sd, n) {
     let ys = [];
 
     for(let i = 0; i < n; i ++) {
-        let grade1 = constrain(randomGaussian(mean, sd), 0, maxX);
-        let grade2 = constrain(randomGaussian(grade1, sd), 0, maxX);
+        let grade1 = randomGaussian(mean, sd);
+        let grade2 = randomGaussian(grade1, sd);
 
         let accepted = 0;
 

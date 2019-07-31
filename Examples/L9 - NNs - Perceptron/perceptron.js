@@ -103,7 +103,7 @@ class Perceptron {
         this.drawWeights();
     }
 
-    drawWeights(base) {
+    drawWeights() {
         // Create a 2D vector from the weights disconsireding the bias w0
         let w = createVector(nn.ws[1], nn.ws[2])
         w.normalize();
