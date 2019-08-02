@@ -3,14 +3,16 @@ let _midiPlayer;
 
 class MidiPlayer {
     constructor() {
-        this.ts = 0;
-        this.pianoRollBufferLength = 30;
-        this.tsize = height/128;
-
-        this.bpm = 120;
-        this.tsDuration = 7.5/120;
+        this.isPlaying = false;
 
         this.pianoRolls = [];
+        this.pianoRollPlaying = [];
+        this.pianoRollBufferLength = 30;
+
+        this.ts = 0;
+        this.bpm = 120;
+        this.tsDuration = 7.5/120;
+        this.tsize = height/128;
 
         this.synth = new Tone.PolySynth(10, Tone.Synth, {
             envelope : {
@@ -134,21 +136,29 @@ class MidiPlayer {
                 let pitch = word.split("_")[0];
                 let duration = word.split("_")[1];
 
-                track.addNote({
-                    midi : pitch,
-                    time : ts * tsDuration,
-                    duration: duration * tsDuration
-                });
+                if(pitch != "" && duration != "") {
+                    track.addNote({
+                        midi : pitch,
+                        time : ts * this.tsDuration,
+                        duration: duration * this.tsDuration
+                    });
+                }
             }
         }
 
         return midi;
     }
 
+    getPianoRoll() {
+        return this.pianoRollPlaying;
+    }
+
     setPianoRoll(pianoRoll, tsCallback) {
         this.ts = 0;
 
         this.pianoRollPlaying = pianoRoll;
+
+        Tone.Transport.cancel();
 
         Tone.Transport.bpm.value = this.bpm;
         Tone.Transport.scheduleRepeat(function(time) {
@@ -184,6 +194,23 @@ class MidiPlayer {
 
     draw() {
         background(240);
+
+        if (mouseIsPressed) {
+            // if (this.isPlaying) {
+            //     this.start();
+            // }
+            // else {
+            //     this.pause();
+            // }
+
+
+            let deltaX = mouseX - pmouseX;
+
+            if(this.ts - deltaX >= 0) {
+                this.ts -= deltaX;
+                Tone.Transport.seconds = this.ts * this.tsDuration;
+            }
+        }
 
         // Draw grid
         noFill();
@@ -222,5 +249,19 @@ class MidiPlayer {
         // Draw time step
         fill(0, 0, 0, 100);
         rect(0, 0, s, s*128);
+    }
+}
+
+function keyPressed() {
+
+    if(keyCode === 32) {
+        _midiPlayer.isPlaying = !_midiPlayer.isPlaying;
+
+        if (_midiPlayer.isPlaying) {
+            _midiPlayer.start();
+        }
+        else {
+            _midiPlayer.pause();
+        }
     }
 }
