@@ -39,8 +39,6 @@ class RNN {
 
             let hprev = tf.zeros([this.hiddenNodes]);
 
-            let totalLoss = 0;
-
             // Processing a sentence Si of size t
             for(let j = 0; j < t; j++) {
                 if(xst[j] && yst[j]) {
@@ -53,7 +51,6 @@ class RNN {
                         let output = _rnn.forward(x, hprev);
                         let loss = tf.losses.softmaxCrossEntropy(y, output.y);
 
-                        totalLoss += loss.dataSync()[0];
                         return loss;
                     });
 
