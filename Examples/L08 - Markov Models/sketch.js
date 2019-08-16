@@ -1,20 +1,23 @@
 
 let ilegalChars = {" ": 0};
 let name = "";
+let pd = null;
 
 function setup() {
     createCanvas(500,500);
+    frameRate(1);
+
+    textSize(24);
+    textAlign(CENTER);
 
     // Estimate probability distribution for the dataset of names
-    let pd = train();
-    name = generateName(pd);
-    console.log(pd);
+    pd = train();
 }
 
 function draw() {
     background(230);
-    textSize(24);
 
+    name = generateName(pd);
     text(name, width/2, height/2);
 }
 

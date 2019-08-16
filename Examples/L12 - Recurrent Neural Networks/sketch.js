@@ -39,17 +39,25 @@ function oneHot(ch) {
 function setup() {
     createCanvas(500, 500);
 
-    let text = parseDataset(dataset);
-    vocab = createVocabulary(text);
+    textSize(16);
+
+    inputText = parseDataset(dataset);
+    vocab = createVocabulary(inputText);
 
     let inputNeurons = vocab.symbols.size;
     let hiddenNeurons = 100;
     let outputNeurons = vocab.symbols.size;
 
-    let rnn = new RNN(inputNeurons, hiddenNeurons, outputNeurons);
-    rnn.train(text, 1, 25);
+    rnn = new RNN(inputNeurons, hiddenNeurons, outputNeurons);
+    // rnn.train(text, 1, 25);
 }
 
 function draw() {
-    background(80);
+    background(230);
+
+    rnn.epoch(inputText, 25);
+    let hprev = tf.zeros([rnn.hiddenNodes]);
+    let name = rnn.generate("a", hprev, 100);
+
+    text(name, 10, 20);
 }

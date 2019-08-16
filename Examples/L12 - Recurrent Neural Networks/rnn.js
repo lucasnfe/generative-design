@@ -10,6 +10,11 @@ class RNN {
         this.whh = tf.variable(tf.randomUniform([hiddenNodes, hiddenNodes], -1, 1));
         this.why = tf.variable(tf.randomUniform([outputNodes, hiddenNodes], -1, 1));
 
+        this.p = 0;
+
+        const learningRate = 0.01;
+        this.optimizer = tf.train.sgd(learningRate);
+
         _rnn = this;
     }
 
@@ -24,42 +29,42 @@ class RNN {
     }
 
     train(xs, epochs, t) {
+        this.p = 0;
+
+        const learningRate = 0.01;
+        this.optimizer = tf.train.sgd(learningRate);
+
         for(let i = 0; i < epochs; i++) {
             this.epoch(xs, t);
         }
     }
 
     epoch(xs, t) {
-        const learningRate = 0.01;
-        const optimizer = tf.train.sgd(learningRate);
+        let xst = xs.slice(this.p, this.p + t);
+        let yst = xs.slice(this.p+1, this.p + 1 + t);
 
-        for(let i = 0; i < xs.length; i += t) {
-            let xst = xs.slice(i, i + t);
-            let yst = xs.slice(i+1, i+1 + t);
+        let hprev = tf.zeros([this.hiddenNodes]);
 
-            let hprev = tf.zeros([this.hiddenNodes]);
+        // Processing a sentence Si of size t
+        for(let j = 0; j < t; j++) {
+            if(xst[j] && yst[j]) {
 
-            // Processing a sentence Si of size t
-            for(let j = 0; j < t; j++) {
-                if(xst[j] && yst[j]) {
+                // Processing a character Si,j
+                let x = oneHot(xst[j]);
+                let y = oneHot(yst[j]);
 
-                    // Processing a character Si,j
-                    let x = oneHot(xst[j]);
-                    let y = oneHot(yst[j]);
+                this.optimizer.minimize(function() {
+                    let output = _rnn.forward(x, hprev);
+                    let loss = tf.losses.softmaxCrossEntropy(y, output.y);
 
-                    optimizer.minimize(function() {
-                        let output = _rnn.forward(x, hprev);
-                        let loss = tf.losses.softmaxCrossEntropy(y, output.y);
+                    return loss;
+                });
 
-                        return loss;
-                    });
-
-                    hprev = _rnn.forward(x, hprev).h;
-                }
+                hprev = _rnn.forward(x, hprev).h;
             }
-
-            console.log(this.generate("a", hprev, 100));
         }
+
+        this.p += t;
     }
 
     generate(x, hprev, n) {
