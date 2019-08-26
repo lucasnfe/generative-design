@@ -19,37 +19,13 @@ applications. In this repository, you can find all the code implemented in the l
 * L01 - Introduction
 * L02 - Javascript, Processing and p5.js
 * L03 - Randomnes and Noise
-
-<img src="Images/noise.gif" width="300">
-
 * L04 - Cellular Automata
-
-<img src="Images/ca.gif" width="300">
-
 * L05 - Generative Grammars
-
-<img src="Images/grammar.png" width="300">
-
 * L06 - Search
-
-<img src="Images/search.png" width="300">
-
 * L07 - Evolutionary Algortihms
-
-<img src="Images/ga.gif" width="300">
-
 * L08 - Markov Chains
-
-<img src="Images/markov.gif" width="300">
-
 * L09 - Perceptron
-
-<img src="Images/perceptron.gif" width="300">
-
 * L10 - Multilayer Perceptron
-
-<img src="Images/mlp.gif" width="300">
-
 * L11 - TensorFlow.js
 * L12 - Recurrent Neural Networks
 * L13 - Autoencoders
@@ -68,7 +44,6 @@ applications. In this repository, you can find all the code implemented in the l
 * L06 - Include planning (for narrative) and ASP.
 * L07 - Improve GA to generate SMB levels.
 * L14 - Implement simple GAN for digit generation.
-
 * ASG2 - Include base code with optimized renderer to support large worlds.
 * ASG4 - Change description to require Tournament selection instead of Roulette Wheel.
 * ASG5 - Change description to generate monophonic music instead of polyphonic.
