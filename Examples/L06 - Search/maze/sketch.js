@@ -2,10 +2,10 @@ let s = 10;
 let path = [];
 
 function setup() {
-    createCanvas(200, 200);
+    createCanvas(500, 500);
 
     init = createVector(0, 0);
-    end = createVector(19, 19);
+    end = createVector(49, 49);
 
     world = new Array(width/s).fill(15);
     for(let i = 0; i < world.length; i++) {
@@ -44,7 +44,7 @@ function draw() {
         }
     }
 
-    
+
 
     // draw init
     fill(100);

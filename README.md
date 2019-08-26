@@ -31,6 +31,9 @@ applications. In this repository, you can find all the code implemented in the l
 <img src="Images/grammar.png" width="300">
 
 * L06 - Search
+
+<img src="Images/search.png" width="300">
+
 * L07 - Evolutionary Algortihms
 * L08 - Markov Chains
 * L09 - Perceptron
