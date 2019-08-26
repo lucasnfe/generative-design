@@ -20,7 +20,7 @@ applications. In this repository, you can find all the code implemented in the l
 2. Javascript, Processing and p5.js
 3. Randomnes and Noise
 
-![Noise](https://github.com/lucasnfe/Generative-Design/Images/noise.gif)
+![Noise](https://github.com/lucasnfe/Generative-Design/blob/master/Images/noise.gif?raw=true)
 
 4. Cellular Automata
 5. Generative Grammars
