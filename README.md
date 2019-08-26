@@ -20,12 +20,13 @@ applications. In this repository, you can find all the code implemented in the l
 - L02 - Javascript, Processing and p5.js
 - L03 - Randomnes and Noise
     - [Generative Art](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/art/index.html)
-    - [Circle](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/circle/index.html)
-    - [Line](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/line/index.html)
+    - [Circle](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/circle/noise/index.html)
+    - [Line](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/line/noise/index.html)
     - [Starfield](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/starfield/index.html)
-    - [Terrain](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/terrain/index.html)
+    - [Terrain 1D](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/terrain/1D/index.html)
+    - [Terrain 2D](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/terrain/2D/index.html)
     - [Texture](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/texture/index.html)
-    - [Walker](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/walker/index.html)
+    - [Walker](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/walker/noise/index.html)
 - L04 - Cellular Automata
 - L05 - Generative Grammars
 - L06 - Search
