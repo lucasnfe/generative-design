@@ -1,5 +1,5 @@
-This repository contains examples (in p5.js) implemented during the UCSC CMPM147 - Generative Design course and
-base code for programming assignments.
+This repository contains examples (in p5.js) implemented during the University of California, Santa Cruz - CMPM147 - Generative Design
+course and base code for programming assignments.
 
 # CMPM147 - Generative Design
 
@@ -9,11 +9,19 @@ focus on data-driven approaches, mainly using Neural Network techniques. Every w
 including how to apply them to generate artifacts in domains such as visual arts, music, narrative,
 video games, etc.  Methods are implemented in Javascript with P5.js (Processing).
 
+## Live Coding
+
+This is a handson course where we implement the "vanilla" version of the methods in class with simple
+applications. In this repository, you can find all the code implemented in the last version of this course (Summer 19):
+
 ## Lectures
 
 1. Introduction
 2. Javascript, Processing and p5.js
 3. Randomnes and Noise
+
+![Noise](https://github.com/lucasnfe/Generative-Design/Images/noise.gif)
+
 4. Cellular Automata
 5. Generative Grammars
 6. Search
