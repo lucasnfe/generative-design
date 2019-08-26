@@ -14,8 +14,6 @@ video games, etc.  Methods are implemented in Javascript with P5.js (Processing)
 This is a handson course where we implement the "vanilla" version of the methods in class with simple
 applications. In this repository, you can find all the code implemented in the last version of this course (Summer 19):
 
-## Lectures
-
 - L01 - Introduction
 - L02 - Javascript, Processing and p5.js
 - L03 - Randomnes and Noise
@@ -28,15 +26,26 @@ applications. In this repository, you can find all the code implemented in the l
     - [Texture](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/texture/index.html)
     - [Walker](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/walker/noise/index.html)
 - L04 - Cellular Automata
+    - [Elementary](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L04%20-%20Cellular%20Automata/elementary/index.html)
+    - [Game of Life](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L04%20-%20Cellular%20Automata/game/index.html)
 - L05 - Generative Grammars
+    - [L-Systems](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L05%20-%20Gerative%20Grammars/lsystem/index.html)
 - L06 - Search
+    - [Maze](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L06%20-%20Search/maze/index.html)
+    - [BFS](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L06%20-%20Search/search/index.html)
 - L07 - Evolutionary Algortihms
+    - [Simmetric Maps](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L07%20-%20Genetic%20Algorithms/ga/index.html)
 - L08 - Markov Chains
+    - [Name Generator](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L08%20-%20Markov%20Models/index.html)
 - L09 - Perceptron
+    - [Linearly Separable Classification](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L09%20-%20Perceptron/index.html)
 - L10 - Multilayer Perceptron
+    - [Non-linearly Separable Classification](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L10%20-%20Multilayer%20Perceptron/index.html)
 - L11 - TensorFlow.js
 - L12 - Recurrent Neural Networks
+    - [Shakeaspeare Language Modeling](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L12%20-%20Recurrent%20Neural%20Networks/index.html)
 - L13 - Autoencoders
+    - [Denoising](https://github.com/lucasnfe/Generative-Design/blob/master/Examples/L13%20-%20Autoencoders/undercomplete/index.html)
 - L14 - GANs
 
 ## Assignments

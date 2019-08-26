@@ -31,7 +31,7 @@ function draw() {
     }
 
     if(frameCount % 20 == 0) {
-        path = dfs(init, adj, goalTest);
+        path = bfs(init, adj, goalTest);
     }
 
     // draw path
