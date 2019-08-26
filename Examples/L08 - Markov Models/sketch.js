@@ -15,7 +15,7 @@ function setup() {
 }
 
 function draw() {
-    background(230);
+    background(250);
 
     name = generateName(pd);
     text(name, width/2, height/2);

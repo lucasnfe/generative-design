@@ -1,8 +1,8 @@
-let s = 10;
+let s = 50;
 let bestLevel = null;
 
 function setup() {
-    createCanvas(100, 100);
+    createCanvas(500, 500);
 
     levelW = width/s;
     levelH = height/s;
