@@ -26,7 +26,6 @@ applications. In this repository, you can find all the code implemented in the l
     - [Terrain](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/terrain/index.html)
     - [Texture](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/texture/index.html)
     - [Walker](https://lucasnfe.github.io/Generative-Design/Examples/L03%20-%20Noise/walker/index.html)
-
 - L04 - Cellular Automata
 - L05 - Generative Grammars
 - L06 - Search
