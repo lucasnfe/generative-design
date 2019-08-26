@@ -1,7 +1,7 @@
 let lsystem;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(500, 500);
     strokeWeight(3);
 
     // Lsystem attributes
@@ -9,7 +9,7 @@ function setup() {
     let rules = {"F": "FF-[-F+F]+[+F-F]"};
 
     lsystem = new LSystem(rules);
-    let s = lsystem.expand(axiom, 5);
+    let s = lsystem.expand(axiom, 4);
     lsystem.drawString(s, 25);
 }
 

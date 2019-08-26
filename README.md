@@ -9,27 +9,33 @@ focus on data-driven approaches, mainly using Neural Network techniques. Every w
 including how to apply them to generate artifacts in domains such as visual arts, music, narrative,
 video games, etc.  Methods are implemented in Javascript with P5.js (Processing).
 
-## Live Coding
+## Examples
 
 This is a handson course where we implement the "vanilla" version of the methods in class with simple
 applications. In this repository, you can find all the code implemented in the last version of this course (Summer 19):
 
 ## Lectures
 
-1. Introduction
-2. Javascript, Processing and p5.js
-3. Randomnes and Noise
+* L01 - Introduction
+* L02 - Javascript, Processing and p5.js
+* L03 - Randomnes and Noise
 
 <img src="Images/noise.gif" width="300">
 
-4. Cellular Automata
-5. Generative Grammars
-6. Search
-7. Evolutionary Algortihms
-8. Markov Chains
-9. Perceptron
-10. Multilayer Perceptron
-11. TensorFlow.js
-12. Recurrent Neural Networks
-13. Autoencoders
-14. GANs
+* L04 - Cellular Automata
+
+<img src="Images/ca.gif" width="300">
+
+* L05 - Generative Grammars
+
+<img src="Images/grammar.png" width="300">
+
+* L06 - Search
+* L07 - Evolutionary Algortihms
+* L08 - Markov Chains
+* L09 - Perceptron
+* L10 - Multilayer Perceptron
+* L11 - TensorFlow.js
+* L12 - Recurrent Neural Networks
+* L13 - Autoencoders
+* L14 - GANs
