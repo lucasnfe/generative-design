@@ -11,8 +11,8 @@ video games, etc.  Methods are implemented in Javascript with P5.js (Processing)
 
 ## Examples
 
-This is a handson course where we implement the "vanilla" version of the methods in class with simple
-applications. In this repository, you can find all the code implemented in the last version of this course (Summer 19):
+This is a handson course in which we implement in class all the covered generative methods with simple
+applications. In this repository, you can find all the examples implemented in the *Summer 19*  version of this course:
 
 - L01 - Introduction
 - L02 - Javascript, Processing and p5.js
@@ -53,8 +53,8 @@ applications. In this repository, you can find all the code implemented in the l
 - ASG1 - Music Visualization with Particle System
 - ASG2 - Terrain Generation with Perlin Noise
 - ASG3 - Interactive Artist NPC with Generative Grammars
-- ASG4 - Evolving Cars
-- ASG5 - Music with Markov Chains
+- [ASG4 - Evolving Cars](https://lucasnfe.github.io/Generative-Design/Assignments/ASG4%20-%20Evolving%20Cars/index.html)
+- [ASG5 - Music with Markov Chains](https://lucasnfe.github.io/Generative-Design/Assignments/ASG5%20-%20Music%20with%20Markov%20Models/index.html)
 
 ## TODO
 
