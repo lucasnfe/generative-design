@@ -40,7 +40,7 @@ applications. In this repository, you can find all the code implemented in the l
 - L09 - Perceptron
     - [Linear Classification](https://lucasnfe.github.io/Generative-Design/Examples/L09%20-%20Perceptron/index.html)
 - L10 - Multilayer Perceptron
-    - [Nonlinearly Classification](https://lucasnfe.github.io/Generative-Design/Examples/L10%20-%20Multilayer%20Perceptron/index.html)
+    - [Nonlinear Classification](https://lucasnfe.github.io/Generative-Design/Examples/L10%20-%20Multilayer%20Perceptron/index.html)
 - L11 - TensorFlow.js
 - L12 - Recurrent Neural Networks
     - [Shakeaspeare Language Modeling](https://lucasnfe.github.io/Generative-Design/Examples/L12%20-%20Recurrent%20Neural%20Networks/index.html)
