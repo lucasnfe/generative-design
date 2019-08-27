@@ -31,7 +31,7 @@ applications. In this repository, you can find all the code implemented in the l
 - L05 - Generative Grammars
     - [L-Systems](https://lucasnfe.github.io/Generative-Design/Examples/L05%20-%20Gerative%20Grammars/lsystem/index.html)
 - L06 - Search
-    - [Maze](hhttps://lucasnfe.github.io/Generative-Design/Examples/L06%20-%20Search/maze/index.html)
+    - [Maze](https://lucasnfe.github.io/Generative-Design/Examples/L06%20-%20Search/maze/index.html)
     - [BFS](https://lucasnfe.github.io/Generative-Design/Examples/L06%20-%20Search/search/index.html)
 - L07 - Evolutionary Algortihms
     - [Simmetric Maps](https://lucasnfe.github.io/Generative-Design/Examples/L07%20-%20Genetic%20Algorithms/ga/index.html)
