@@ -38,9 +38,9 @@ applications. In this repository, you can find all the code implemented in the l
 - L08 - Markov Chains
     - [Name Generator](https://lucasnfe.github.io/Generative-Design/Examples/L08%20-%20Markov%20Models/index.html)
 - L09 - Perceptron
-    - [Linearly Separable Classification](https://lucasnfe.github.io/Generative-Design/Examples/L09%20-%20Perceptron/index.html)
+    - [Linear Classification](https://lucasnfe.github.io/Generative-Design/Examples/L09%20-%20Perceptron/index.html)
 - L10 - Multilayer Perceptron
-    - [Non-linearly Separable Classification](https://lucasnfe.github.io/Generative-Design/Examples/L10%20-%20Multilayer%20Perceptron/index.html)
+    - [Nonlinearly Classification](https://lucasnfe.github.io/Generative-Design/Examples/L10%20-%20Multilayer%20Perceptron/index.html)
 - L11 - TensorFlow.js
 - L12 - Recurrent Neural Networks
     - [Shakeaspeare Language Modeling](https://lucasnfe.github.io/Generative-Design/Examples/L12%20-%20Recurrent%20Neural%20Networks/index.html)
