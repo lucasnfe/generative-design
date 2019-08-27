@@ -1,17 +1,20 @@
-This repository contains examples (in p5.js) implemented during the University of California, Santa Cruz - CMPM147 - Generative Design
-course and base code for programming assignments.
+This repository contains examples (in p5.js) implemented during the University of California, Santa Cruz - CMPM147 - Generative Design course and base code for programming assignments.
 
 # CMPM147 - Generative Design
 
 This course introduces the students to fundamental methods of Generative Arts and Design.
 The first half of the course focus on both constructive and search-based approaches and the second half
-focus on data-driven approaches, mainly using Neural Network techniques. Every week we discuss a new method,
+focus on data-driven approaches, mainly based on Neural Networks. Every class we discuss a new method,
 including how to apply them to generate artifacts in domains such as visual arts, music, narrative,
 video games, etc.  Methods are implemented in Javascript with P5.js (Processing).
 
+## Webpage
+
+The webpage of the Summer 19 version of this course can be found [here](https://canvas.ucsc.edu/courses/26749). In this webpage you can find link to slides, readings and assignment descriptions.
+
 ## Examples
 
-This is a handson course in which we implement in class all the covered generative methods with simple
+This is a handson course, so we implement in class all the covered generative methods with simple
 applications. In this repository, you can find all the examples implemented in the *Summer 19*  version of this course:
 
 - L01 - Introduction
@@ -53,8 +56,10 @@ applications. In this repository, you can find all the examples implemented in t
 - ASG1 - Music Visualization with Particle System
 - ASG2 - Terrain Generation with Perlin Noise
 - ASG3 - Interactive Artist NPC with Generative Grammars
-- [ASG4 - Evolving Cars](https://lucasnfe.github.io/Generative-Design/Assignments/ASG4%20-%20Evolving%20Cars/index.html)
-- [ASG5 - Music with Markov Chains](https://lucasnfe.github.io/Generative-Design/Assignments/ASG5%20-%20Music%20with%20Markov%20Models/index.html)
+- ASG4 - Evolving Cars [[Description]](https://canvas.ucsc.edu/courses/26749/assignments/83081)
+    - [Base Code](https://lucasnfe.github.io/Generative-Design/Assignments/ASG4%20-%20Evolving%20Cars/index.html)
+- ASG5 - Music with Markov Chains [[Description]](https://canvas.ucsc.edu/courses/26749/assignments/83082)
+    - [Base Code](https://lucasnfe.github.io/Generative-Design/Assignments/ASG5%20-%20Music%20with%20Markov%20Models/index.html)
 
 ## TODO
 
