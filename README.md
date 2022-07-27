@@ -14,7 +14,7 @@ The webpage of the Summer 19 version of this course can be found [here](https://
 
 ## Examples
 
-This is a handson course, so we implement in class all the covered generative methods with simple
+This is a hands-on course, so we implement in class all the covered generative methods with simple
 applications. In this repository, you can find all the examples implemented in the *Summer 19*  version of this course:
 
 - L01 - Introduction [[Slides]](https://docs.google.com/presentation/d/1ZaPR8NiZbaCHuKccnK0puyMztqJQXDuntZ_AUweYi8A/edit?usp=sharing)
